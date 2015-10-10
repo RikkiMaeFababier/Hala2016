@@ -1,0 +1,2748 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Halalan 2016</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+ 	<link href="css/round-about.css" rel="stylesheet">
+  	<link href="css/agency.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+	
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Presidentiables', 'Votes'],
+          ['Grace Poe',     11],
+          ['Mar Roxas',      2],
+          ['Rikki Fababier',  2],
+          ['Jejomar Binay', 2],
+          ['Rodrigo Duterte',    7]
+        ]);
+
+        var options = {
+          title: '#Hala2016',
+          pieHole: 0.3,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+
+      var map, heatmap;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: {lat: 37.775, lng: -122.434},
+    mapTypeId: google.maps.MapTypeId.SATELLITE
+  });
+
+  heatmap = new google.maps.visualization.HeatmapLayer({
+    data: getPoints(),
+    map: map
+  });
+}
+
+function toggleHeatmap() {
+  heatmap.setMap(heatmap.getMap() ? null : map);
+}
+
+function changeGradient() {
+  var gradient = [
+    'rgba(0, 255, 255, 0)',
+    'rgba(0, 255, 255, 1)',
+    'rgba(0, 191, 255, 1)',
+    'rgba(0, 127, 255, 1)',
+    'rgba(0, 63, 255, 1)',
+    'rgba(0, 0, 255, 1)',
+    'rgba(0, 0, 223, 1)',
+    'rgba(0, 0, 191, 1)',
+    'rgba(0, 0, 159, 1)',
+    'rgba(0, 0, 127, 1)',
+    'rgba(63, 0, 91, 1)',
+    'rgba(127, 0, 63, 1)',
+    'rgba(191, 0, 31, 1)',
+    'rgba(255, 0, 0, 1)'
+  ]
+  heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+}
+
+function changeRadius() {
+  heatmap.set('radius', heatmap.get('radius') ? null : 20);
+}
+
+function changeOpacity() {
+  heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
+}
+
+// Heatmap data: 500 Points
+function getPoints() {
+  return [
+    new google.maps.LatLng(12.2781558,122.6217543),
+    
+  ];
+}
+    </script>
+ 	<style>
+html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+#floating-panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+      #floating-panel {
+        background-color: #fff;
+        border: 1px solid #999;
+        left: 25%;
+        padding: 5px;
+        position: absolute;
+        top: 10px;
+        z-index: 5;
+      }
+
+ 	</style>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+               
+                    <a class="navbar-brand" href=""><img src="img/navbar.png"></a>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="vote.html">Vote</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#download">Chart</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Heatmap</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+
+
+ 
+
+    <header class="intro">
+        <div class="intro-body">
+         <img src="img/haha.png" class="img-responsive">
+            <div class="container">
+                <div class="row">
+
+				<h3  id='txtUser'></h3>
+
+					<p id="dispUser"></p>
+                    <div class="col-md-8 col-md-offset-2">
+                    <p>See the tweets about the Halalan 2016 and Meet the Running Presidentials</p>
+                        <h1 class="brand-heading"></h1>
+                        <p class="intro-text"></p>																																																
+						
+
+                        
+						
+						
+						
+        </div>
+        <br><br><br><br>
+              <a class="twitter-timeline" href="https://twitter.com/hashtag/hala2016" data-widget-id="651030772267159552">#hala2016 Tweets</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+	<section id="chart" class="container content-section text-center" >
+		<div id="donutchart" style="width: auto; height: 500px;"></div>
+	</section>
+	
+	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7984246.981554076!2d122.62175425000001!3d12.278155803089302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1444406045367" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+	
+	 <section id="president" class="container content-section text-center" >
+	
+	<div class="row">
+	
+            <div class="col-lg-12">
+			
+                <h2 class="page-header">For president</h2>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                 
+				  
+				  
+				 <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/binay.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+			   <h3>Jejomar Binay<br>
+                    <small>"Jojo"</small><br><br>
+					 
+                </h3>
+               
+			   
+			   
+			   
+			   
+			   
+			   
+           
+		   </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                  
+				 <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/roxas.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Mar Roxas<br>
+                    <small>"Mar"</small>
+                </h3>
+                
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                 <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/poe.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Grace Poe<br>
+                    <small>"Poe"</small>
+                </h3>
+               
+            </div>
+            
+</section>
+	
+				
+				 <section id="considered" class="container content-section text-center">
+			
+			
+		<div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Considering candidacy</h2>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                
+            </div>	
+			
+			<div class="col-lg-4 col-sm-6 text-center">
+                 <a href="#portfolioModal7" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/revilla.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Bong Revilla<br>
+                    <small>"Bong"</small>
+                </h3>
+               
+				</div>
+				
+                 <a href="#portfolioModal9" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/santos.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Vilma Santos<br>
+                    <small>"Vilma"</small>
+                </h3>
+                
+				<div class="col-lg-4 col-sm-6 text-center">
+                 <a href="#portfolioModal10" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/bongbong.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Ferdinand Marcos,Jr.<br>
+                    <small>"Bongbong"</small>
+                </h3>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+               
+				<div class="col-lg-4 col-sm-6 text-center">
+                <a href="#portfolioModal11" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/lacson.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Panfillo Lacson<br>
+                    <small>"Pinlac"</small>
+                </h3>
+              
+                 <a href="#portfolioModal12" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/gordon.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Richard Gordon<br>
+                    <small>"Richard"</small>
+                </h3>
+                
+            </div>
+		
+			</section>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<section id="declined" class="container content-section text-center">
+			 <h2 class="page-header">Declined candidacy</h2>
+			
+			
+			
+			            
+
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			 
+			
+			
+			
+			 <a href="#portfolioModal600" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/pnoy.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Benigno Aquino III<br>
+                    <small>"Pnoy"</small>
+                </h3>
+                
+            </div>
+			
+			
+			 <a href="#portfolioModal102" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/kris.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Kris Aquino<br>
+                    <small>"Kris"</small>
+                </h3>
+                
+            </div>
+			
+			
+			 <a href="#portfolioModal103" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/duterte.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Rodrigo Duterte<br>
+                    <small>"Rod"</small>
+                </h3>
+                
+            </div>
+			
+				<div class="col-lg-4 col-sm-6 text-center">
+                 <a href="#portfolioModal3000" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/villar.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Manny Villar<br>
+                    <small>"Villar"</small>
+                </h3>
+				
+				
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+					<div class="col-lg-4 col-sm-6 text-center">
+                 <a href="#portfolioModal2000" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/erap.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Joseph Estrada<br>
+                    <small>"Erap"</small>
+                </h3>
+				
+			 <a href="#portfolioModal1000" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/paquiao.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Manny Paquiao<br>
+                    <small>"Pacman"</small>
+                </h3>
+                
+            </div>
+			
+			
+			
+			 <a href="#portfolioModal104" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/jv.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Joseph Victor Gomez Ejercito<br>
+                    <small>"JV"</small>
+                </h3>
+                
+            </div>
+			
+			 <a href="#portfolioModal105" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/jinggoy.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Jinggoy Estrada<br>
+                    <small>"Jinggoy"</small>
+                </h3>
+                
+            </div>
+			 
+			
+			
+			
+			<a href="#portfolioModal30" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/santiago.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Meriam Santiago<br>
+                    <small>"Meriam"</small>
+                </h3>
+                
+            </div>
+			
+			
+			<a href="#portfolioModal300" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/gibo.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Gilbert Teodoro<br>
+                    <small>"Gibo"</small>
+                </h3>
+                
+            </div>
+			
+			
+			
+			
+			
+			
+			
+			<a href="#portfolioModal785" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/pangnilinan.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Francis Pangilinan<br>
+                    <small>"Riko"</small>
+                </h3>
+                
+            </div>
+			
+			
+			<a href="#portfolioModal685" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/manny.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Manny Pangilinan<br>
+                    <small>"Manny"</small>
+                </h3>
+                
+            </div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				<a href="#portfolioModal906" class="portfolio-link" data-toggle="modal">
+				   <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                              
+                            </div>
+                        </div>
+				  
+				  
+				  
+				<img class="img-circle img-responsive img-center" src="img/riki.png" alt="" >
+               </a>
+			   <div class="portfolio-caption">
+                <h3>Rikki Mae Fababier<br>
+                    <small>"Riki"</small>
+                </h3>
+                
+            </div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+        <hr>
+	
+	
+	
+	</section>
+	
+	<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           
+                           
+                            <img class="img-responsive img-centered" src="img/binay.png" alt="">
+							
+                         <p class="item-intro text-muted">    Isang Pilipinong politiko na naging ika-15 Pangalawang Pangulo ng Pilipinas. Naging alkalde rin siya ng Lungsod ng Makati simula 1986 hanggang 1998 at mula 2001 hanggang 2010. Hawak din niya ang mga sumusunod na posisyon: Pangulo ng United Nationalist Alliance (UNA), Pangulo ng Partido Demokratiko Pilipino-Lakas ng Bayan (PDP-Laban), at Pangulo ng Kapatirang Scout ng Pilipinas.</p>
+							
+
+							
+							<h6><a class="gotoWiki" href="https://tl.wikipedia.org/wiki/Jejomar_Binay">See More </a></h6>
+							
+					   </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+	
+	<div class="portfolio-modal modal fade" id="portfolioModal1000" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           
+                           
+                            <img class="img-responsive img-centered" src="img/desktop.png" alt="">
+							
+                         <p class="item-intro text-muted">    Filipino world champion professional boxer. At 32 he was elected to the Philippine House of Representatives. He has also been involved in basketball,[8] acting, and singing.[9]
+
+He is the first and only eight-division world champion,[10] in which he has won ten world titles, as well as the first to win the lineal championship in four different weight classes.[11] According to Forbes, he was the 2nd highest paid athlete in the world as of 2015.
+
+							</p>
+							<h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Manny_Pacquiao">See More </a></h6>
+							
+					   </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="portfolio-modal modal fade" id="portfolioModal685" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           
+                           
+                            <img class="img-responsive img-centered" src="img/manny.png" alt="">
+							
+                         <p class="item-intro text-muted">   
+
+						  He is the incumbent Chairman of the Philippine Long Distance Telephone Company, from 1998 up to the present. He is also the Chairman of TV5, Philex Mining, and Metro Pacific Investments Corporation (MPIC).
+
+Pangilinan spent his elementary and high school days at San Beda College. He graduated cum laude from the Ateneo de Manila University with a Bachelor of Arts degree in Economics. He received his MBA degree in 1968 from the Wharton School of the University of Pennsylvania.[2]
+						</p>	
+							<h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Manuel_V._Pangilinan">See More </a></h6>
+							
+					   </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	
+	
+	
+		<div class="portfolio-modal modal fade" id="portfolioModal785" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           
+                           
+                            <img class="img-responsive img-centered" src="img/pangnilinan.png" alt="">
+							
+                         <p class="item-intro text-muted">    
+						 
+						 
+						 Filipino politician and was a Senator of the Philippines from 2001 to 2013, where he also served as Senate Majority Leader from 2004 to 2008.[1] In May 2014, Pangilinan was appointed Presidential Assistant for Food Security and Agricultural Modernization by President Benigno Aquino III.[2]
+						 
+						</p>
+
+							
+							<h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Francis_Pangilinan">See More </a></h6>
+							
+					   </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <!-- Portfolio Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+						 <img class="img-responsive img-centered" src="img/roxas.png" alt="">
+                        
+                            <p class="item-intro text-muted">Siya ang anak ng dating senador na si Gerry Roxas, at apo ng dating Pangulong Manuel Roxas.Siya ay tinaguriang Mr Palengke dahil sa kanyang mahusay na performance nung kalihim pa siya ng Kagawaran ng Kalakalan at Industriya ng Pilipinas.</p>
+                        
+                          
+                           <h6><a class="gotoWiki" href="https://tl.wikipedia.org/wiki/Mar_Roxas">See More &raquo;</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal2000" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+						 <img class="img-responsive img-centered" src="img/erap.png" alt="">
+                        
+                            <p class="item-intro text-muted">Estrada gained popularity as a film actor, playing the lead role in over a hundred films in an acting career spanning some three decades. He used his popularity as an actor to make gains in politics, serving as mayor of San Juan for 16 years, as Senator for one term, then as Vice-President under President Fidel V. Ramos.
+                          </p>
+                           <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Joseph_Estrada">See More &raquo;</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+	
+	
+	
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal3000" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+						 <img class="img-responsive img-centered" src="img/villar.png" alt="">
+                        
+                            <p class="item-intro text-muted"> Filipino businessman and politician. He is formerly a Philippine Senator, and the incumbent president of the Nacionalista Party.
+
+Villar was born to a poor family in Tondo, an impoverished and densely populated district of Manila.[1][2][3][4][5] After graduating from the University of the Philippines, he worked as an accountant and financial analyst, then launched a highly successful business in real estate. The number of homes built by Villar's companies has totaled to over 200,000 units, and his business career made him one of the country's wealthiest persons. </p>
+                           <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Manny_Villar">See More &raquo;</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <!-- Portfolio Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           
+							</h2>
+                            <p class="item-intro text-muted">
+							 <img class="img-responsive img-centered" src="img/poe.png" alt="">
+							Isinilang sa Iloilo subalit inabandona ng kanyang tunay na nanay. Siya ang inangking anak ng Pambansang Alagad ng Sining na si Fernando Poe, Jr., ang Hari ng Pelikulang Pilipino, at ang kaniyang asawa na si Susan Roces, na nagpalaki sa kanya sa Maynila bilang kanilang nag-iisang anak na babae. Nag-aral sa Pilipinas at sa Estados Unidos, kung saan siya nakapagtapaos sa Boston College. Lumaki siya sa Estados Unidos bago siya bumalik sa Pilipinas noong 2004, nang pumanaw ang kanyang ama ilang buwan pagkatapos ng halalan ng 2004.
+							
+							
+							
+							
+							
+							
+							 <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://tl.wikipedia.org/wiki/Grace_Poe">See More &raquo;</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 4 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <img class="img-responsive img-centered" src="img/escudero.png" alt="">
+                            <p class="item-intro text-muted">Naging kasapi siya ng Senado ng Pilipinas noong pang 2007. Dati siyang naglingkod bilang kasapi ng Kapulungan ng Kinatawan ng Pilipinas na kinakatawan ang Unang Distrito ng Sorsogon at naging Pinuno ng Minorya noong ika-13 Kongreso ng Pilipinas na kanyang huling termino sa Kamara.</p>
+                           
+                            
+                            <p> <a href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/"></a>.</p>
+                            
+							
+							<h6><a class="gotoWiki" href="https://tl.wikipedia.org/wiki/Francis_Escudero">See More</a></h6>
+							
+							
+							
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 5 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           <img class="img-responsive img-centered" src="img/trillanes.png" alt="">
+                            <p class="item-intro text-muted">Nakilala siya sa kanyang ginampanan sa hindi na matagumpay na pag-aalsa sa Oakwood noong 2003 nang hinawakan niya kasama ang 321 mga sundalo ang paupahang gusali sa Oakwood sa Lungsod ng Makati. Naglagay sila ng mga bomba doon at binalaan ng pababagsakin ang gusali. Nasampahan sila ng kaso sa hukumang pangsundalo ng Pilipinas.</p>
+                           
+                            <p> <a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="https://tl.wikipedia.org/wiki/Antonio_Trillanes_IV"></a>.</p>
+                            <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Antonio_Trillanes">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 6 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <img class="img-responsive img-centered" src="img/cayetano.png" alt="">
+                            <p class="item-intro text-muted">Kapanganakan	28 Oktubre 1970
+Pagkamamamayan	Pilipinas
+Alma mater	Unibersidad ng Pilipinas, Pamantasang Ateneo de Manila
+Hanapbuhay	politiko</p>
+                           
+                            <p> <a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p><a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://tl.wikipedia.org/wiki/Alan_Peter_Cayetano">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+	   </div>
+    </div>
+<div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           <img class="img-responsive img-centered" src="img/revilla.png" alt="">
+                            <p class="item-intro text-muted">	Kapanganakan	25 Setyembre 1966 (49 taong gulang)
+Maynila, Pilipinas
+Kabansaan	Pilipino
+Partidong politikal	Lakas-CMD (1995 – )
+Asawa	Lani Mercado (Jesusa Victoria H. Bautista)
+Tirahan	Imus, Kabite
+Hanapbuhay	Artista, pulitiko
+Relihiyon	Katoliko Romano</p>
+                           
+                             <a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p><a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                             <h6><a class="gotoWiki" href="https://tl.wikipedia.org/wiki/Bong_Revilla">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal61" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                          <img class="img-responsive img-centered" src="img/robredo.png" alt="">
+                            <p class="item-intro text-muted">tagapagtanggol, pulitiko at ang kasalukuyang kinatawan ng ikatlong distrito ng Camarines Sur, Pilipinas. Siya ang kabiyak ng yumaong Kalihim ng DILG Jesse Robredo. Siya ay kalahok sa isang pangkat ng manananggol sa magbubukid kung tawagin ay Saligan</p>
+                            
+                            <p> <a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                             <h6><a class="gotoWiki" href="https://tl.wikipedia.org/wiki/Leni_Robredo">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                             <img class="img-responsive img-centered" src="img/santos.png" alt="">
+                            <p class="item-intro text-muted">Siya ang dating punong bayan (mayor) ng Lungsod ng Lipa (1998-2007) at kasalukuyang gobernadora (provincial governor) ng probinsiya ng Batangas. Siya ang ina ni Lucky Manzano sa dating asawa ni Edu Manzano. Sa kasalukuyan, si Senador Ralph Recto ang kanyang asawa at mayroon silang isang anak.</p>
+                            
+                            <p> <a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://tl.wikipedia.org/wiki/Vilma_Santos">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal600" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                             <img class="img-responsive img-centered" src="img/pnoy.png" alt="">
+                            <p class="item-intro text-muted">Aquino is a fourth-generation politician: his great-grandfather, Servillano "Mianong" Aquino, served as a delegate to the Malolos Congress; his grandfather, Benigno Aquino, Sr., served as Speaker of the House of Representatives of the Philippines from 1943 to 1944; and his parents were President Corazon Aquino and Senator Benigno "Ninoy" Aquino, Jr. Aquino is a member of the Liberal Party.[8] In the Liberal Party, Aquino held various positions such as Secretary General and Vice President for Luzon. Aquino is the Chairman of the Liberal Party.[9]
+                            <p> <a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Benigno_Aquino_III">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	
+	
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal102" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                             <img class="img-responsive img-centered" src="img/kris.png" alt="">
+                            <p class="item-intro text-muted">Kristina Bernadette Cojuangco Aquino (born February 14, 1971), professionally known as Kris Aquino, is a Filipina television personality and actress who gained prominence and numerous endorsements from her talk shows, game shows, horror movies, massacre movies. She is the youngest daughter of former Philippine senator Benigno S. Aquino, Jr., and Corazon Cojuangco-Aquino, who served as the 11th President of the Philippines, and sister of Benigno S. Aquino, III, the 15th President of the Philippines.</p>
+                            
+                            <p> <a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Kris_Aquino">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal906" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                             <img class="img-responsive img-centered" src="img/riki.png" alt="">
+                            <p class="item-intro text-muted">Birthday
+May 22
+Gender
+Female
+Religious Views
+Iglesia Ni Cristo</p>
+                            <p> <a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://www.facebook.com/mhae.fababier?fref=ts">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal103" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                             <img class="img-responsive img-centered" src="img/duterte.png" alt="">
+                            <p class="item-intro text-muted">
+							
+							Rodrigo Roa Duterte[1] (born March 28, 1945), who also goes by the nicknames Rody or Digong, is a Filipino lawyer and politician. Duterte is among the longest-serving mayors in the Philippines. He has been mayor of Davao City, a highly-urbanized city in Mindanao island, for 7 terms, totalling more than 22 years. He has also served as vice-mayor and congressman in the city.
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							</p>
+                            
+                            <p> <a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Rodrigo_Duterte">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal104" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                             <img class="img-responsive img-centered" src="img/jv.png" alt="">
+                            <p class="item-intro text-muted">
+							
+							Joseph Victor Gomez Ejercito (born December 26, 1969 in Manila), commonly known as JV Ejercito or JV Ejercito Estrada, is a Filipino politician who served as Representative for the Legislative district of San Juan City, Mayor of that same city, and is currently, a Senator. He is the son of former President Joseph Estrada and a recipient of the 2007 Ten Outstanding Young Men award in the government and public service category.
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							</p>
+                            
+                            <p> <a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/JV_Ejercito">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal10" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           <img class="img-responsive img-centered" src="img/bongbong.png" alt="">
+                            <p class="item-intro text-muted">Kapanganakan	13 Setyembre 1957
+Lungsod ng Maynila
+Pagkamamamayan	Pilipinas
+Alma mater	University of Oxford, Q1589734, La Salle Green Hills
+Hanapbuhay	politiko
+Pananampalataya	Q7361618
+Mga magulang	Ferdinand Marcos
+Imelda Marcos</p>
+                            
+                            <p><a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://tl.wikipedia.org/wiki/Ferdinand_Marcos,_Jr.">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal11" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                             <img class="img-responsive img-centered" src="img/lacson.png" alt="">
+                            <p class="item-intro text-muted">Kapanganakan	1 Hunyo 1948
+Lungsod ng Imus
+Pagkamamamayan	Pilipinas
+Alma mater	Pamantasang Liseo ng Pilipinas
+Hanapbuhay	politiko</p>
+                            
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                             <h6><a class="gotoWiki" href="https://tl.wikipedia.org/wiki/Panfilo_Lacson">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	<div class="portfolio-modal modal fade" id="portfolioModal12" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                              <img class="img-responsive img-centered" src="img/gordon.png" alt="">
+                            <p class="item-intro text-muted">Kapanganakan	5 Agosto 1945 (70 taong gulang)
+Castillejos, Zambales, Pilipinas
+Partidong politikal	
+Bagumbayan-VNP (2009–kasalukuyan)
+Nacionalista (1988–2004)
+Lakas-Kampi-CMD (2004–2009)
+KBL (1980–1986)
+Tirahan	Lungsod ng Olongapo, Zambales
+Hanapbuhay	Civil servant
+Propesyon	Politiko
+Relihiyon	Romano Katoliko</p>
+                          
+                            <p>
+
+
+
+
+							<a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                             <h6><a class="gotoWiki" href="https://tl.wikipedia.org/wiki/Richard_Gordon_(politiko)">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal30" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                          <img class="img-responsive img-centered" src="img/santiago.png" alt="">
+                            <p class="item-intro text-muted">politiko at kasalukuyang Senador ng Pilipinas. Siya ay isang abogado, dating hukom, at guro ng saligatang batas at batas internasyunal. Naglingkod siya bilang komisyonado ng Kawanihan ng Pandarayuhan at Deportasyon ng Pilipinas noong 1988 at naging kalihim ng Kagawaran ng Repormang Pansakahan mula 1989 hanggang 1991. Nakatanggap siya ng Gawad Magsaysay (Magsaysay Award) nang siya ay komisyonado ng Kawanihan ng Pandarayuhan at Deportasyon</p>
+                            
+                             <a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p><a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                             <h6><a class="gotoWiki" href="https://tl.wikipedia.org/wiki/Miriam_Defensor%E2%80%93Santiago">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal300" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                          
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/gibo.png" alt="">
+							  <p class="item-intro text-muted">
+							  
+							  
+							 former secretary of the national defense of the republic of the Philippines, having assumed the post in August 2007 until November 15, 2009. He was a member of the House of Representatives, representing the First District of Tarlac province, from 1998 to 2007. In March 2009, he announced his intention to run for President of the Philippines in the May 2010 elections.
+							  
+							  
+							  
+							  </p>
+                            <a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Gilbert_Teodoro">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal30" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Rodrigo Duterte</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/duterte.png" alt="">
+                            <p> Filipino lawyer and politician. Duterte is among the longest-serving mayors in the Philippines. He has been mayor of Davao City, a highly-urbanized city in Mindanao island, for 7 terms, totalling more than 22 years. He has also served as vice-mayor and congressman in the city<a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Rodrigo_Duterte">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal105" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/jinggoy.png" alt="">
+                           
+						   <p class="item-intro text-muted">
+							José Pimentel Ejército, Jr. (born February 17, 1963[1]), better known as Jinggoy Ejercito Estrada or simply Jinggoy Estrada, is a Filipino politician and former film actor who has been a member of the Senate of the Philippines since 2004. He was born to Joseph Estrada, who was President of the Philippines from 1998 to 2001, and former senator Luisa Estrada; he is also the half-brother of politician Joseph Victor Ejercito.
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							</p>  
+						   
+						   
+						   
+						   
+							
+							<a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Jinggoy_Estrada">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	
+	
+	<div class="portfolio-modal modal fade" id="portfolioModal905" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="portfolio-modal modal fade" id="portfolioModal905" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/riki.png" alt="">
+                           
+						   <p class="item-intro text-muted">
+							José Pimentel Ejército, Jr. (born February 17, 1963[1]), better known as Jinggoy Ejercito Estrada or simply Jinggoy Estrada, is a Filipino politician and former film actor who has been a member of the Senate of the Philippines since 2004. He was born to Joseph Estrada, who was President of the Philippines from 1998 to 2001, and former senator Luisa Estrada; he is also the half-brother of politician Joseph Victor Ejercito.
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							</p>  
+						   
+						   
+						   
+						   
+							
+							<a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Jinggoy_Estrada">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		 <div class="portfolio-modal modal fade" id="portfolioModal301" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/villar.png" alt="">
+                           
+						   <p class="item-intro text-muted">
+							Villar was born to a poor family in Tondo, an impoverished and densely populated district of Manila.[1][2][3][4][5] After graduating from the University of the Philippines, he worked as an accountant and financial analyst, then launched a highly successful business in real estate. The number of homes built by Villar's companies has totaled to over 200,000 units, and his business career made him one of the country's wealthiest persons.
+							
+							
+							
+							
+							
+							
+							
+							</p>  
+						   
+						   
+						   
+						   
+							
+							<a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Manny_Villar">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal965" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/erap.png" alt="">
+                           
+						   <p class="item-intro text-muted">
+							Joseph "Erap" Ejercito Estrada (born Jose Marcelo Ejercito; April 19, 1937) is a Filipino politician who was the 13th President of the Philippines from 1998 to 2001. He has been Mayor of the City of Manila, the country's capital, since 2013.[1]
+
+Estrada gained popularity as a film actor, playing the lead role in over a hundred films in an acting career spanning some three decades. He used his popularity as an actor to make gains in politics, serving as mayor of San Juan for 16 years, as Senator for one term, then as Vice-President under President Fidel V. Ramos.
+							
+							
+							
+							
+							
+							
+							
+							
+							</p>  
+						   
+						   
+						   
+						   
+							
+							<a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Joseph_Estrada">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	
+	
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal107" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/paquiao.png" alt="">
+                           
+						   <p class="item-intro text-muted">
+							Emmanuel "Manny" Dapidran Pacquiao, PLH (/ˈpæki.aʊ/ pak-ee-ow; Tagalog: [pɐkˈjaʊ];[7] born December 17, 1978), is a Filipino world champion professional boxer. At 32 he was elected to the Philippine House of Representatives. He has also been involved in basketball,[8] acting, and singing.[9]
+
+He is the first and only eight-division world champion,[10] in which he has won ten world titles, as well as the first to win the lineal championship in four different weight classes.[11] According to Forbes, he was the 2nd highest paid athlete in the world as of 2015.[12]
+							
+							
+							
+							
+							
+							
+							</p>  
+						   
+						   
+						   
+						   
+							
+							<a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Manny_Pacquiao">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+	   
+	   
+	   
+	   
+	    <div class="portfolio-modal modal fade" id="portfolioModal901" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/pangnilinan.png" alt="">
+                           
+						   <p class="item-intro text-muted">
+							Emmanuel "Manny" Dapidran Pacquiao, PLH (/ˈpæki.aʊ/ pak-ee-ow; Tagalog: [pɐkˈjaʊ];[7] born December 17, 1978), is a Filipino world champion professional boxer. At 32 he was elected to the Philippine House of Representatives. He has also been involved in basketball,[8] acting, and singing.[9]
+
+He is the first and only eight-division world champion,[10] in which he has won ten world titles, as well as the first to win the lineal championship in four different weight classes.[11] According to Forbes, he was the 2nd highest paid athlete in the world as of 2015.[12]
+							
+							
+							
+							
+							
+							
+							</p>  
+						   
+						   
+						   
+						   
+							
+							<a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Manny_Pacquiao">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	    <div class="portfolio-modal modal fade" id="portfolioModal107" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/riki.png" alt="">
+                           
+						   <p class="item-intro text-muted">
+							 <div class="portfolio-modal modal fade" id="portfolioModal500" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/riki.png" alt="">
+                           
+						   <p class="item-intro text-muted">
+							Birthday
+May 22
+Gender
+Female
+Religious Views
+Iglesia Ni Cristo
+							
+							
+							
+							
+							
+							</p>  
+						   
+						   
+						   
+						   
+							
+							<a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Manny_Pacquiao">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+							
+							
+							
+							
+							</p>  
+						   
+						   
+						   
+						   
+							
+							<a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Manny_Pacquiao">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	<div class="portfolio-modal modal fade" id="#portfolioModal800" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/pangnilinan.png" alt="">
+                           
+						   <p class="item-intro text-muted">
+							Francis Nepomuceno Pangilinan (born August 24, 1963), also known as Kiko Pangilinan, is a Filipino politician and was a Senator of the Philippines from 2001 to 2013, where he also served as Senate Majority Leader from 2004 to 2008.[1] In May 2014, Pangilinan was appointed Presidential Assistant for Food Security and Agricultural Modernization by President Benigno Aquino III.[2]
+							
+							
+							
+							
+							
+							</p>  
+						   
+						   
+						   
+						   
+							
+							<a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Francis_Pangilinan">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+	   </div>
+    </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="modal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                           
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/pangnilinan.png" alt="">
+                           
+						   <p class="item-intro text-muted">
+							Francis Nepomuceno Pangilinan (born August 24, 1963), also known as Kiko Pangilinan, is a Filipino politician and was a Senator of the Philippines from 2001 to 2013, where he also served as Senate Majority Leader from 2004 to 2008.[1] In May 2014, Pangilinan was appointed Presidential Assistant for Food Security and Agricultural Modernization by President Benigno Aquino III.[2]
+							
+							
+							
+							
+							
+							</p>  
+						   
+						   
+						   
+						   
+							
+							<a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Francis_Pangilinan">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal101" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                          
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/pnoy.png" alt="">
+							
+							
+							 <p class="item-intro text-muted">Aquino is a fourth-generation politician: his great-grandfather, Servillano "Mianong" Aquino, served as a delegate to the Malolos Congress; his grandfather, Benigno Aquino, Sr., served as Speaker of the House of Representatives of the Philippines from 1943 to 1944; and his parents were President Corazon Aquino and Senator Benigno "Ninoy" Aquino, Jr. Aquino is a member of the Liberal Party.[8] In the Liberal Party, Aquino held various positions such as Secretary General and Vice President for Luzon. Aquino is the Chairman of the Liberal Party.[9] </p>
+							
+							<a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://en.wikipedia.org/wiki/Benigno_Aquino_III">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal30" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <img class="img-responsive img-centered" src="img/santiago.png" alt="">
+                            <p class="item-intro text-muted">Kapanganakan	15 Hunyo 1945 (70 taong gulang)
+Lungsod ng Iloilo, Pilipinas
+Partidong politikal	People's Reform Party
+Asawa	Narciso Santiago
+Alma mater	Unibersidad ng Pilipinas, Kabisayaan
+Unibersidad ng Pilipinas, Diliman
+University of Michigan, Ann Arbor
+Maryhill School of Theology </p>
+                            
+                            <p><a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p><a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                             <h6><a class="gotoWiki" href="https://tl.wikipedia.org/wiki/Miriam_Defensor%E2%80%93Santiago">See More</a></h6>
+                        </div>
+                    </div>
+	
+	
+	
+	
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal200" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <img class="img-responsive img-centered" src="img/santiago.png" alt="">
+                            <p class="item-intro text-muted">Kapanganakan	15 Hunyo 1945 (70 taong gulang)
+Lungsod ng Iloilo, Pilipinas
+Partidong politikal	People's Reform Party
+Asawa	Narciso Santiago
+Alma mater	Unibersidad ng Pilipinas, Kabisayaan
+Unibersidad ng Pilipinas, Diliman
+University of Michigan, Ann Arbor
+Maryhill School of Theology </p>
+                            
+                            <p><a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p><a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                             <h6><a class="gotoWiki" href="https://tl.wikipedia.org/wiki/Miriam_Defensor%E2%80%93Santiago">See More</a></h6>
+                        </div>
+                    </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal90 " tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                             <img class="img-responsive img-centered" src="img/riki.png" alt="">
+                            <p class="item-intro text-muted">Birthday
+May 22
+Gender
+Female
+Religious Views
+Iglesia Ni Cristo</p>
+                          
+                            <p> <a href="https://www.behance.net/MathavanJaya"></a></p>
+                            <p> <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/"></a>.</p>
+                              <h6><a class="gotoWiki" href="https://www.facebook.com/mhae.fababier?fref=ts">See More</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	 <div class="portfolio-modal modal fade" id="portfolioModal90" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2></h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img class="img-responsive img-centered" src="img/riki.png" alt="">
+                            <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
+                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+
+	   </div>
+    </div>
+	
+	
+	
+	
+	
+	
+	
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+
+<script type="text/javascript">
+	
+		$('#txtUser').html('Hello!!! Welcome to HALALAN 2016, ' + localStorage.getItem('Name'));
+		$.ajax({
+		type:'POST',
+		dataType:'JSON',
+		url:'chart.php',
+		data:{},
+		success:function(data){
+		cData=data;
+		console.log(cData);
+			}
+			});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Halalan 2016</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+ <link href="css/round-about.css" rel="stylesheet">
+  <link href="css/agency.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	
+	
+	
+	
+	
+	
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="js/jquery.js"></script>
+ <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+	<script src="js/chart.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+               
+                    <a class="navbar-brand" href="menu.html"><img src="img/navbar.png"></a>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="vote.html">Vote</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#download">Chart</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Heatmap</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+	
+
+	
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                 <h1><p>Vote for Your President</p></h1>
+                    <div class="col-md-8 col-md-offset-2">
+
+                 
+                    
+                    <form id="frmVote" method="POST">
+                       <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Enter Your Name " required>
+<br><br><br>
+						<select class="form-control" id="txtLoc" name="txtLoc">
+						<option disabled="">Choose Province:</option>	
+						<option>Abra</option>
+						<option>Agusan del Norte</option>
+						<option>Agusan del Sur</option>
+						<option>Aklan</option>
+						<option>Albay</option>
+						<option>Antique</option>
+						<option>Apayao</option>
+						<option>Aurora</option>
+						<option>Basilan</option>
+						<option>Bataan</option>
+						<option>Batanes</option>
+						<option>Batangas</option>
+						<option>Benguet</option>
+						<option>Biliran</option>
+						<option>Bohol</option>
+						<option>Bukidnon</option>
+						<option>Bulacan</option>
+						<option>Cagayan</option>
+						<option>Camarines Norte</option>
+						<option>Camarines Sur</option>
+						<option>Camiguin</option>
+						<option>Capiz</option>
+						<option>Catanduanes</option>
+						<option>Cavite</option>
+						<option>Cebu</option>
+						<option>Compostela Valley</option>
+						<option>Cotabato</option>
+						<option>Davao del Norte</option>
+						<option>Davao del Sur</option>
+						<option>Davao Occidental</option>
+						<option>Davao Oriental</option>
+						<option>Dinagat Islands</option>
+						<option>Eastern Samar</option>
+						<option>Guimaras</option>
+						<option>Ifugao</option>
+						<option>Ilocos Norte</option>
+						<option>Ilocos Sur</option>
+						<option>Iloilo</option>
+						<option>Isabela</option>
+						<option>Kalinga</option>
+						<option>La Union</option>
+						<option>Laguna</option>
+						<option>Lanao del Norte</option>
+						<option>Lanao del Sur</option>
+						<option>Leyte</option>
+						<option>Maguindanao</option>
+						<option>Marinduque</option>
+						<option>Masbate</option>
+						<option>Metro Manila</option>
+						<option>Misamis Occidental</option>
+						<option>Misamis Oriental</option>
+						<option>Mountain Province</option>
+						<option>Negros Occidental</option>
+						<option>Negros Oriental</option>
+						<option>Northern Samar</option>
+						<option>Nueva Ecija</option>
+						<option>Nueva Vizcaya</option>
+						<option>Occidental Mindoro</option>
+						<option>Oriental Mindoro</option>
+						<option>Palawan</option>
+						<option>Pampanga</option>
+						<option>Pangasinan</option>
+						<option>Quezon</option>
+						<option>Quirino</option>
+						<option>Rizal</option>
+						<option>Romblon</option>
+						<option>Samar</option>
+						<option>Sarangani</option>
+						<option>Siquijor</option>
+						<option>Sorsogon</option>
+						<option>South Cotabato</option>
+						<option>Southern Leyte</option>
+						<option>Sultan Kudarat</option>
+						<option>Sulu</option>
+						<option>Surigao del Norte</option>
+						<option>Surigao del Sur</option>
+						<option>Tarlac</option>
+						<option>Tawi-Tawi</option>
+						<option>Zambales</option>
+						<option>Zamboanga del Norte</option>
+						<option>Zamboanga del Sur</option>
+						<option>Zamboanga Sibugay</option>
+						</select>
+						<br><br><br><select class="form-control" id="txtPres" name="txtPres">
+						<option disabled="">Choose Candidate:</option>
+						<option> Jejomar Binay </option>
+						<option> Peter Cayatano </option>
+						<option> Rodrigo Duterte</option>
+						<option> Chiz Escudero</option>
+						<option> Ping Lacson</option>
+						<option> BongBong Marcos</option>
+						<option> Grace Poe</option>
+						<option> Bong Revilla</option>
+						<option> Max Roxas</option>
+						<option> Mirriam Santiago</option>
+						<option> Gilbert Teodoro</option>
+						<option> Antonio Trillanes</option>
+						<option> Rikki Mae "Peks" Fababier</option>
+						</select>
+					
+		<br>	<br>	<br>				
+								
+					
+					 <button type="submit" class="btn btn-primary" value="submit" id="btnSubmit">Vote</button>
+                    </form>
+					<div id="download">
+					<div id="legend"></div>
+           
+			
+              <div id="container" style="min-width: auto; height: auto; margin: 0 auto"></div>
+           
+                        <h1 class="brand-heading"></h1>						
+						</div>						
+						</div>
+						
+        </div>
+		</div>
+    </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+	
+
+    <!-- About Section -->
+	
+	
+	
+	<script type="text/javascript">
+	
+    $(document).ready(function(){
+    $('#btnSubmit').click(function(){
+            $.ajax({
+                type:'POST',
+                url:'vote.php',
+                dataType: "html",  
+                data: $('#frmVote').serialize(),
+                success:function(data) {
+                    if(data) {   
+                            alert(data);
+                    } else {
+                        alert("Something Went Wrong !");
+                    }
+                }
+        });
+        });
+         
+    });
+
+	$(document).ready(function(){
+    $('#btnSubmit').click(function(){
+            $.ajax({
+                type:'POST',
+                url:'voteupdate.php',
+                dataType: "html",  
+                data: $('#frmVote').serialize(),
+                success:function(data) {
+                    if(data) {   
+                            alert(data);
+                    } else {
+                        alert("Something Went Wrong !");
+                    }
+                }
+        });
+        });
+         
+    });
+	
+	
+</script><script type="text/javascript">
+		$(document).ready(function() {
+			var options = {
+				chart: {
+	                renderTo: 'container',
+	                plotBackgroundColor: null,
+	                plotBorderWidth: null,
+	                plotShadow: false,
+					 type: 'pie',
+					 dataLabels: {
+                        enabled: false
+                    }
+	            },
+	            
+	            tooltip: {
+	                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	            },
+	              
+                
+	            series: [{
+	               
+	                name: 'Browser share',
+	                data: []
+	            }]
+	        }
+	        
+	        $.getJSON("data.php", function(json) {
+				options.series[0].data = json;
+	        	chart = new Highcharts.Chart(options);
+	        });
+	        
+	        
+	        
+      	});   
+		</script>
+		<script src="Chart.js"></script>
+	
+	
+		
+
+	
+	
+
+   
+</body>
+
+</html>
